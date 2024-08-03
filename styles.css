@@ -1,0 +1,412 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.5s ease; /* Smooth transition for background color change */
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 90vw;
+    max-width: 1200px;
+    height: 90vh;
+    overflow: auto;
+}
+
+.box {
+    background-color: #ffffff;
+    border: 5px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes borderColorTransition {
+    0% { border-color: #d1e7ff; }
+    4% { border-color: #c6e3b2; }
+    8% { border-color: #f4e1a3; }
+    12% { border-color: #f1a1a1; }
+    16% { border-color: #d6aaff; }
+    20% { border-color: #a1e0f1; }
+    24% { border-color: #d3f1a2; }
+    28% { border-color: #f1c6d5; }
+    32% { border-color: #d1eaf1; }
+    36% { border-color: #b2d1f1; }
+    40% { border-color: #f1d1d1; }
+    44% { border-color: #c0c0c0; }
+    48% { border-color: #d0a8f1; }
+    52% { border-color: #f5a9f5; }
+    56% { border-color: #fab4b4; }
+    60% { border-color: #faefb3; }
+    64% { border-color: #a9a9f0; }
+    68% { border-color: #f3f39e; }
+    72% { border-color: #84a8a8; }
+    76% { border-color: #80e2a1; }
+    80% { border-color: #aff885; }
+    84% { border-color: #f3acfa; }
+    86% { border-color: #afdbf5; }
+    90% { border-color: #f8c59a; }
+    94% { border-color: #465b68; }
+    98% { border-color: #f09f9f; }
+    100% { border-color: #d1e7ff; }
+}
+
+.box {
+    animation: borderColorTransition 200s infinite;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#cardDisplay, #upgradeCost {
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+    width: 100%;
+    text-align: center;
+}
+
+.Common { background-color: #d1e7ff; }
+.Uncommon { background-color: #c6e3b2; }
+.Rare { background-color: #f4e1a3; }
+.Epic { background-color: #f1a1a1; }
+.Legendary { background-color: #d6aaff; }
+.Mythical { background-color: #a1e0f1; }
+.Divine { background-color: #d3f1a2; }
+.Celestial { background-color: #f1c6d5; }
+.Ethereal { background-color: #d1eaf1; }
+.Astral { background-color: #b2d1f1; }
+.Cosmic { background-color: #f1d1d1; }
+.Quantum { background-color: #c0c0c0; }
+.Singularity { background-color: #d0a8f1; }
+.Nebula { background-color: #f5a9f5; }
+.Stellar { background-color: #fab4b4; }
+.Lunar { background-color: #faefb3; }
+.Solar { background-color: #a9a9f0; }
+.Nova { background-color: #f3f39e; }
+.Abysal { background-color: #84a8a8; }
+.Radiant { background-color: #80e2a1; }
+.Chrono { background-color: #aff885; }
+.Omni { background-color: #f3acfa; }
+.Galactic { background-color: #afdbf5; }
+
+@keyframes rainbow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Chromatic */
+.Chromatic {
+    background: linear-gradient(45deg, 
+        #FF0000, /* Red */
+        #FF7F00, /* Orange */
+        #FFFF00, /* Yellow */
+        #00FF00, /* Green */
+        #0000FF, /* Blue */
+        #4B0082, /* Indigo */
+        #8B00FF  /* Violet */
+    );
+    background-size: 400% 400%; /* Size of the gradient background */
+    animation: rainbow 3s ease infinite; /* Animation duration and timing function */
+    width: 100%; /* Adjust width as needed */
+    height: 15px; /* Adjust height as needed */
+}
+/* Infinite */
+.Infinite {
+    background: linear-gradient(45deg, 
+        #000000,
+        #FFFFFF,
+        #000000,
+        #FFFFFF,
+        #000000,
+        #FFFFFF,
+        #000000
+    );
+    background-size: 400% 400%; /* Size of the gradient background */
+    animation: rainbow 10s ease infinite; /* Animation duration and timing function */
+    width: 100%; /* Adjust width as needed */
+    height: 15px; /* Adjust height as needed */
+}
+
+.hidden {
+    display: none;
+}
+
+.cutscene {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#rollCounterContainer {
+    position: absolute;
+    top: 10px; /* Adjust the position from the top */
+    left: 10px; /* Adjust the position from the right */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    color: white; /* Text color */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+#rollCounter {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+#achievementPopupContainer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+.achievement-popup {
+    background-color: #4caf50; /* Green background for popups */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#toggleMusicBtn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    background-color: #3D3D3D;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#toggleMusicBtn:hover {
+    background-color: #3D3D3D;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes backgroundColorTransition {
+    0% { background-color: #d1e7ff; }
+    4% { background-color: #c6e3b2; }
+    8% { background-color: #f4e1a3; }
+    12% { background-color: #f1a1a1; }
+    16% { background-color: #d6aaff; }
+    20% { background-color: #a1e0f1; }
+    24% { background-color: #d3f1a2; }
+    28% { background-color: #f1c6d5; }
+    32% { background-color: #d1eaf1; }
+    36% { background-color: #b2d1f1; }
+    40% { background-color: #f1d1d1; }
+    44% { background-color: #c0c0c0; }
+    48% { background-color: #d0a8f1; }
+    52% { background-color: #f5a9f5; }
+    56% { background-color: #fab4b4; }
+    60% { background-color: #faefb3; }
+    64% { background-color: #a9a9f0; }
+    68% { background-color: #f3f39e; }
+    72% { background-color: #84a8a8; }
+    76% { background-color: #80e2a1; }
+    80% { background-color: #aff885; }
+    84% { background-color: #f3acfa; }
+    86% { background-color: #afdbf5; }
+    90% { background-color: #f8c59a; }
+    94% { background-color: #465b68; }
+    98% { background-color: #f09f9f; }
+    100% { background-color: #d1e7ff; }
+}
+
+body {
+    animation: backgroundColorTransition 200s infinite;
+}
+
+#playtimeTimerContainer {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+#playtimeTimer {
+    position: fixed;
+    top: 40px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+/* Style for the buttons container */
+.button-container {
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Style for the buttons */
+.button-container button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+#songPopup {
+    position: fixed;
+    bottom: 20px;
+    right: 30%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+#songPopup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Unique class for the button container */
+.game-control-buttons {
+    position: absolute;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 20px; /* Adjust the distance from the right */
+}
+
+/* Optional: Style the buttons */
+.game-control-buttons button {
+    margin: 5px; /* Adds space between buttons */
+    padding: 10px 15px; /* Adds padding inside the buttons */
+    border: none; /* Removes default border */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounds the button corners */
+}
+
+.game-control-buttons button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
